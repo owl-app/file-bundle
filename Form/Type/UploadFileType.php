@@ -26,6 +26,11 @@ abstract class UploadFileType extends AbstractResourceType
         ;
     }
 
+    /**
+     * @return string
+     *
+     * @psalm-return 'owl_file'
+     */
     public function getBlockPrefix(): string
     {
         return 'owl_file';

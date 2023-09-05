@@ -20,6 +20,11 @@ final class FilePathExtension extends AbstractExtension
         $this->baseUrl    = sprintf('%s://%s', $requestContext->getScheme(), $requestContext->getHost());
     }
 
+    /**
+     * @return TwigFilter[]
+     *
+     * @psalm-return list{TwigFilter}
+     */
     public function getFilters(): array
     {
         return [

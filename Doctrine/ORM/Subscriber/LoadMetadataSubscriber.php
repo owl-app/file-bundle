@@ -28,6 +28,11 @@ final class LoadMetadataSubscriber implements EventSubscriber
         $this->subjects = $subjects;
     }
 
+    /**
+     * @return string[]
+     *
+     * @psalm-return list{'loadClassMetadata'}
+     */
     public function getSubscribedEvents(): array
     {
         return [
@@ -60,6 +65,11 @@ final class LoadMetadataSubscriber implements EventSubscriber
         }
     }
 
+    /**
+     * @return ((false|string)[][]|string)[]
+     *
+     * @psalm-return array{fieldName: 'fileSubject', targetEntity: string, inversedBy: 'files', joinColumns: list{array{name: string, referencedColumnName: string, nullable: false, onDelete: 'CASCADE'}}}
+     */
     private function createSubjectMapping(
         string $fileableEntity,
         string $subject,
@@ -78,6 +88,11 @@ final class LoadMetadataSubscriber implements EventSubscriber
         ];
     }
 
+    /**
+     * @return (((false|string)[]|string)[]|string)[]
+     *
+     * @psalm-return array{fieldName: 'author', targetEntity: string, joinColumns: list{array{name: 'author_id', referencedColumnName: string, nullable: false, onDelete: 'CASCADE'}}, cascade: list{'persist'}}
+     */
     private function createUploaderMapping(string $uploaderEntity, ClassMetadata $uploaderEntityMetadata): array
     {
         return [
@@ -93,6 +108,11 @@ final class LoadMetadataSubscriber implements EventSubscriber
         ];
     }
 
+    /**
+     * @return (string|string[])[]
+     *
+     * @psalm-return array{fieldName: 'files', targetEntity: string, mappedBy: 'fileSubject', orderBy: array{createdAt: 'DESC'}, cascade: list{'all'}}
+     */
     private function createReviewsMapping(string $fileEntity): array
     {
         return [
