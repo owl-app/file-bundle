@@ -19,7 +19,7 @@ final class RegisterFileFactoryPass implements CompilerPassInterface
             $fileFactoryDefinition = new Definition(FileFactory::class, [$factory]);
             $fileFactoryDefinition->setPublic(true);
 
-            $container->setDefinition(sprintf('owl.factory.' . $subject . '_file'), $fileFactoryDefinition);
+            $container->setDefinition('owl.factory.' . $subject . '_file', $fileFactoryDefinition);
         }
     }
 }
