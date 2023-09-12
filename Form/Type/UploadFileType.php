@@ -6,8 +6,6 @@ namespace Owl\Bundle\FileBundle\Form\Type;
 
 use Sylius\Bundle\ResourceBundle\Form\Type\AbstractResourceType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
-
-;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 
@@ -26,11 +24,6 @@ abstract class UploadFileType extends AbstractResourceType
         ;
     }
 
-    /**
-     * @return string
-     *
-     * @psalm-return 'owl_file'
-     */
     public function getBlockPrefix(): string
     {
         return 'owl_file';

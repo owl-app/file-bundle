@@ -6,11 +6,10 @@ namespace Owl\Bundle\FileBundle\Controller;
 
 use Owl\Bridge\SyliusResource\Controller\BaseController;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
 
 class FileController extends BaseController
 {
-    public function uploadAction(Request $request): Response
+    public function uploadAction(Request $request): void
     {
         $configuration = $this->requestConfigurationFactory->create($this->metadata, $request);
 
@@ -23,14 +22,6 @@ class FileController extends BaseController
 
         $newResource = $form->getData();
 
-        $event = $this->eventDispatcher->dispatch('upload', $configuration, $newResource);
-
-        echo 'dziala';
-
-        // return $this->render($configuration->getTemplate('index.html'), [
-        //     'configuration' => $configuration,
-        //     'metadata' => $this->metadata,
-        //     'user' => $newResource
-        // ]);
+        $this->eventDispatcher->dispatch('upload', $configuration, $newResource);
     }
 }
