@@ -59,12 +59,12 @@ final class OwlFileExtension extends AbstractResourceExtension
             $fileChangeListener
                 ->setPublic(true)
                 ->addTag('kernel.event_listener', [
-                    'event' => 'owl.'.$fileSubject . '_file.pre_create',
+                    'event' => 'owl.' . $fileSubject . '_file.pre_create',
                     'method' => 'uploadFile',
                     'lazy' => true,
                 ])
                 ->addTag('kernel.event_listener', [
-                    'event' => 'owl.'.$fileSubject . '_file.pre_update',
+                    'event' => 'owl.' . $fileSubject . '_file.pre_update',
                     'method' => 'uploadFile',
                     'lazy' => true,
                 ])

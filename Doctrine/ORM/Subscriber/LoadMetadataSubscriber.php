@@ -16,7 +16,6 @@ namespace Owl\Bundle\FileBundle\Doctrine\ORM\Subscriber;
 use Doctrine\Common\EventSubscriber;
 use Doctrine\ORM\Event\LoadClassMetadataEventArgs;
 use Doctrine\ORM\Mapping\ClassMetadata;
-use Webmozart\Assert\Assert;
 
 final class LoadMetadataSubscriber implements EventSubscriber
 {
@@ -73,7 +72,7 @@ final class LoadMetadataSubscriber implements EventSubscriber
     private function createSubjectMapping(
         string $fileableEntity,
         string $subject,
-        ClassMetadata $fileableEntityMetadata
+        ClassMetadata $fileableEntityMetadata,
     ): array {
         return [
             'fieldName' => 'fileSubject',

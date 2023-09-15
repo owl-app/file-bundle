@@ -17,7 +17,7 @@ final class FilePathExtension extends AbstractExtension
     public function __construct(string $baseFilePath, RequestContext $requestContext)
     {
         $this->baseFilePath = $baseFilePath;
-        $this->baseUrl    = sprintf('%s://%s', $requestContext->getScheme(), $requestContext->getHost());
+        $this->baseUrl = sprintf('%s://%s', $requestContext->getScheme(), $requestContext->getHost());
     }
 
     /**
@@ -34,6 +34,6 @@ final class FilePathExtension extends AbstractExtension
 
     public function getPath(string $filePath): string
     {
-        return $this->baseUrl.'/'.$this->baseFilePath.'/'.$filePath;
+        return $this->baseUrl . '/' . $this->baseFilePath . '/' . $filePath;
     }
 }

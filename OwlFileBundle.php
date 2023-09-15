@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace Owl\Bundle\FileBundle;
 
+use Owl\Bundle\FileBundle\DependencyInjection\Compiler\RegisterFileFactoryPass;
 use Sylius\Bundle\ResourceBundle\AbstractResourceBundle;
 use Sylius\Bundle\ResourceBundle\SyliusResourceBundle;
-use Owl\Bundle\FileBundle\DependencyInjection\Compiler\RegisterFileFactoryPass;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 final class OwlFileBundle extends AbstractResourceBundle
@@ -32,8 +32,6 @@ final class OwlFileBundle extends AbstractResourceBundle
 
     /**
      * @psalm-suppress MismatchingDocblockReturnType https://github.com/vimeo/psalm/issues/2345
-     *
-     * @return string
      *
      * @psalm-return 'Owl\Component\File\Model'
      */

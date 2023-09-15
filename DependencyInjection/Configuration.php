@@ -13,15 +13,10 @@ declare(strict_types=1);
 
 namespace Owl\Bundle\FileBundle\DependencyInjection;
 
-use Sylius\Bundle\ResourceBundle\SyliusResourceBundle;
-use Owl\Bundle\FileBundle\Form\Type\ReviewType;
 use Owl\Bundle\FileBundle\Controller\FileController;
 use Owl\Bundle\FileBundle\Form\Type\FileType;
-use Owl\Component\File\Model\FileInterface;
-use Owl\Component\File\Model\UploaderInterface;
+use Sylius\Bundle\ResourceBundle\SyliusResourceBundle;
 use Sylius\Component\Resource\Factory\Factory;
-use Owl\Component\Review\Model\ReviewerInterface;
-use Owl\Component\Review\Model\ReviewInterface;
 use Symfony\Component\Config\Definition\Builder\ArrayNodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
